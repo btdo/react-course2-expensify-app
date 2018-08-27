@@ -5,11 +5,11 @@ import './styles/styles.scss';
 import 'normalize.css/normalize.css';
 import AppRouter from './routers/AppRouter';
 import configureStore from './store/configureStore';
-import {addExpense} from './actions/expenses';
 import {setTextFilter} from './actions/filters';
 import getVisibleExpenses from './selectors/expenses';
 import 'react-dates/lib/css/_datepicker.css';
 import './firebase/firebase';
+import { startSetExpenses} from './actions/expenses'; 
 
 const store = configureStore();
 
@@ -23,4 +23,11 @@ const jsx = (
         <AppRouter />
     </Provider>
 )
-ReactDOM.render(jsx, document.getElementById('app'));
+
+ReactDOM.render(<p>Loading...</p>, document.getElementById('app'));
+
+store.dispatch(startSetExpenses()).then(() => {
+    console.log("Rendering done");
+    ReactDOM.render(jsx, document.getElementById('app'));
+})
+
