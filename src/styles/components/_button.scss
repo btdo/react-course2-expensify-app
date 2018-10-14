@@ -1,37 +1,19 @@
-.big-button {
-    background: $purple;
-    border: none;
-    border-bottom: .6rem solid darken($purple,10%);
-    color: white;
-    font-weight: bold;
-    font-size: $l-size;
-    width: 100%;
-    margin-bottom: $m-size;
-    padding: 2.4rem;
-}
-
-.big-button:disabled {
-    opacity: .5;
-}
-
 .button {
-    background: $purple;
+    background: $blue;
     border: none;
-    border-bottom: .3rem solid darken($purple,10%);
     color: white;
-    font-weight: 500;
-    padding: $s-size
+    padding: $s-size;
+    display: inline-block;
+    font-weight: 300;
+    font-size: $font-size-large;
+    text-decoration: none;
+    line-height: 1;
 }
 
-.button--link {
+.button--secondary {
+    background-color: #888888;
+}
+
+.button--link{
     background: none;
-    border: none;
-    color: $off-white;
-    padding: 0;
-}
-
-@media (min-width: $desktop-breakpoint){
-    .big-button {
-        margin-bottom: $xl-size;
-    }
 }
